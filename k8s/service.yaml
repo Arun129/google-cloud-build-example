@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: google-cloud-build-example
+spec:
+  selector:
+     run: google-cloud-build-example
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+  type: LoadBalancer

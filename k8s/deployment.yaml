@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: google-cloud-build-example
+  name: google-cloud-build-example
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: google-cloud-build-example
+  template:
+    metadata:
+      labels:
+        run: google-cloud-build-example
+    spec:
+      containers:
+      - image: gcr.io/mypoc-267414/google-cloud-build-example:latest
+        name: google-cloud-build-example
+        ports:
+        - containerPort: 5000
